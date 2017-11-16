@@ -14,8 +14,8 @@ public class Kiu {
         this.x.add(a);
     }
 
-    public void deQueue(int index){
-        this.x.remove(index);
+    public void deQueue(){
+        this.x.remove(this.x.size());
     }
 
     public boolean isClean(){
@@ -31,11 +31,12 @@ public class Kiu {
     }
 
     public int giveLast(){
-        return this.x.get(this.x.size()-1);
+       return this.x.get(this.x.size());
     }
 
     public int length(){
         return this.x.size();
     }
+
 
 }

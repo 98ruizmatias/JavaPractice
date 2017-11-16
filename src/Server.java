@@ -9,18 +9,17 @@ public class Server {
         Socket socket;
         Runner2 does;
         Kiu q = new Kiu();
+        Producer produce = new Producer(q);
 
-        q.enQueue(3);
-        q.enQueue(343);
-        q.enQueue(5);
-        q.enQueue(235);
-        q.enQueue(6);
+        produce.exexcute();
        try {
             ServerSocket wfc = new ServerSocket(9999);
+
            while (true){
               // System.out.println("Im in first step");
                socket = wfc.accept();
                //System.out.println("I have founded a client");
+
                does = new Runner2(socket, q);
                does.execute();
            }
