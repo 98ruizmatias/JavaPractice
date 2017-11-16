@@ -1,0 +1,62 @@
+
+//FIBOOO
+
+public class Fibonacci {
+
+    public static int fibo(int n)
+    {
+        if ( n > 2 ){
+            return fibo(n-1) + fibo(n-2);
+        }
+        else if ( n ==1 || n == 2) {
+            return 1;
+        }
+        else{ //error
+            throw new IllegalArgumentException("El valor debe ser positivo");
+        }
+    }
+
+}
+
+
+
+///COMBINATORIO
+
+
+public static long combinatorio(int p, int q){
+  return factorial(p)/(factorial(q)*factorial(p-q));
+}
+
+public static long factorial(int n){ //en la implementacion hay que chequear que lo ingrsado no sea negativo
+  long factorial = 1;
+  for (int i = 2; i <= n ; i++) {
+    factorial = factorial * i; // factorial *= i;
+  }
+  return factorial;
+}
+
+public static long factorial2(int n){ //Caso recursivo de el factorial
+  if (n == 0 || n == 1) {
+    return 1;
+  }
+  return n*factorial2(n-1);
+}
+
+
+//ROTATE Matrix
+
+public Matrix rotate(double[][] a){
+  double a
+  last = a[a.length-1][a[0].length-1];
+  for (int r = a.length; r >= 0 ; r--) {
+    for (int c = a[0].length - 2 ; c >= 0 ; c-- ) {
+      a[r][c+1] = a[r][c];    }
+    if (r >= 1) {
+      a[r][0] = r[r-1][a.length-1]
+      this.set(r,0,this.get(r-1,this.rows()-1))
+    }
+  }
+  a[0][0] = last
+  this.set(0,0,a);
+  return a;
+}
